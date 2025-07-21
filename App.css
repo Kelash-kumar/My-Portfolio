@@ -1,0 +1,53 @@
+.profile-img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #103874;
+    border-radius: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    transition: transform ease-out 10ms;
+  }
+  
+  #stalker {
+    position: fixed;
+    margin-top: -15px;
+    margin-left: -15px;
+    width: 40px;
+    height: 40px;
+    background-color: #928f8f;
+    opacity: 30%;
+    border-radius: 100%;
+    pointer-events: none;
+    transition: transform ease-out 100ms;
+    z-index: 999;
+  }
+ 
+
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media a {
+  color: #333;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.social-media a:hover {
+  color: #3498db;
+}
+
+.rights-text {
+  font-size: 12px;
+  color: #777;
+}

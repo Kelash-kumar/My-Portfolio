@@ -1,0 +1,134 @@
+.service {
+  padding: 50px 0;
+  margin-left: 65px;
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.service-item {
+  /* flex: 1; */
+  max-width: 370px; /* Adjust the max-width based on your design */
+}
+
+
+.services-heading {
+  text-align: center;
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.service-item {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  max-width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+
+
+
+.skill_progress {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.section__title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.skill_progress__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill_progress__item {
+  width: 200px;
+  margin: 20px;
+  text-align: left;
+}
+
+.progress {
+  height: 12px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 6px;
+  background-color: #4caf50; /* Green color for the progress bar */
+  transition: width 0.8s ease;
+}
+
+/* Styling for text inside progress-bar */
+.progress-bar p {
+  color: #fff;
+  text-align: center;
+  line-height: 12px;
+  margin: 0;
+  padding: 0 5px;
+}
+
+/* Styling for different levels of progress */
+.progress-bar.high {
+  background-color: #ff9800; /* Orange color for high progress */
+}
+
+.progress-bar.medium {
+  background-color: #ffc107; /* Yellow color for medium progress */
+}
+
+.progress-bar.low {
+  background-color: #f44336; /* Red color for low progress */
+}
+
+
+/* responsive for mobile */
+ @media screen and (max-width: 480px ) {
+  .service {
+    margin-left: 0;
+    margin-top: 80px;
+  }
+  .service-item {
+    margin: 20px 0;
+  }
+  .skill_progress__item {
+    width: 100%;
+  }
+ }
