@@ -1,21 +1,17 @@
-import { Facebook, Linkedin, Github, GraduationCap, BookOpen } from "lucide-react"
+import { Facebook, Linkedin, Github, GraduationCap, BookOpen, Briefcase } from "lucide-react"
 
 export const userData = {
   name: "Kelash Kumar",
   email: "kelash.raisal@gmail.com",
   phone: "+92 3491100042",
-  address: "Jamshoro, Sindh, Pakistan",
-  profession: " Junior Full-Stack Developer | MERN Stack",
+  address: "Karachi, Sindh, Pakistan",
+  profession: "Junior Full-Stack Developer | MERN Stack",
   profile_image: "/assets/profile-pic.png",
-  about: `My name is Kelash Kumar, and I am a dedicated software engineering student hailing from Umerkot, Sindh. I am currently pursuing my education at Mehran University of Engineering and Technology. With a fervent passion for technology, I have diligently acquired a comprehensive skill set in web development and am eager to apply my knowledge to real-world projects.
+  about: `I'm a full-stack web developer with more than a year of experience building scalable applications with the MERN stack. I work with React, Node, Express, TypeScript, and Next.js to create clean user interfaces and dependable backend systems.
 
-I am a self-taught developer, I am currently working as a freelancer and looking for a full-time job as a MERN Stack Developer. I am a team player and I love working with people. I am a fast learner and I am always looking for ways to improve my skills.
+I've developed REST APIs, worked with MySQL and MongoDB, and deployed projects on AWS EC2. I am committed to improving my craft and have been expanding my skills in DevOps, especially Docker and Jenkins.
 
-I have expertise in React, Node, Express, MongoDB, HTML, CSS, Bootstrap, Framer-motion, JavaScript, JSON, Git, GitHub, firebase and more, considering them indispensable life skills for my chosen career path. Applying my knowledge, I have successfully undertaken and completed several projects, showcasing my proficiency in these technologies.
-
-My experience extends to working with RESTful APIs, a crucial aspect of modern web development. My aim is to deepen my understanding of Modern web dev. to further enhance my capabilities and inch closer to achieving my career goal.
-
-I am enthusiastic about leveraging my acquired skills and knowledge to contribute meaningfully to the field of web development and am committed to staying abreast of industry trends and advancements.`,
+I have strong technical proficiency in Frontend (React.js, Next.js, TailwindCSS) and Backend (Node.js, Express.js, Prisma/Sequelize ORM). Fluent in Sindhi, Urdu, and English, I am eager to apply my skills in a challenging environment.`,
   social: [
     {
       name: "LinkedIn",
@@ -28,89 +24,75 @@ I am enthusiastic about leveraging my acquired skills and knowledge to contribut
       icons: <Github className="w-6 h-6" />,
     },
     {
-      name: "Facebook",
+      name: "Facebook", // Link retained from previous data as it was not in CV but likely correct
       link: "https://www.facebook.com/kelash.raisal/",
       icons: <Facebook className="w-6 h-6" />,
     },
   ],
 
   skills: [
-    { name: "HTML", percentage: "95", color: "#f16529" },
-    { name: "CSS", percentage: "90", color: "#2965f1" },
-    { name: "TailwindCSS", percentage: "70", color: "#563d7c" },
-    { name: "JavaScript", percentage: "80", color: "#f0db4f" },
-    { name: "React", percentage: "80", color: "#61dbfb" },
-    { name: "Node.js", percentage: "70", color: "#68a063" },
-    { name: "Express", percentage: "75", color: "#ffef00" },
-    { name: "MongoDB", percentage: "70", color: "#4db33d" },
-    { name: "Git", percentage: "60", color: "#f34f29" },
-    { name: "GitHub", percentage: "60", color: "#211f1f" },
-    { name: "Framer Motion", percentage: "70", color: "#ff00ff" },
-    { name: "Firebase", percentage: "60", color: "#f5820b" },
+    { name: "React.js", percentage: "90", color: "#61dbfb" },
+    { name: "Next.js", percentage: "85", color: "#000000" },
+    { name: "Node.js", percentage: "80", color: "#68a063" },
+    { name: "Express.js", percentage: "80", color: "#ffef00" },
+    { name: "TypeScript", percentage: "75", color: "#3178C6" },
+    { name: "MongoDB", percentage: "85", color: "#4db33d" },
+    { name: "MySQL", percentage: "75", color: "#4479A1" },
+    { name: "PostgreSQL", percentage: "70", color: "#336791" },
+    { name: "TailwindCSS", percentage: "90", color: "#38B2AC" },
+    { name: "Prisma/Sequelize", percentage: "70", color: "#0C344B" },
+    { name: "Docker", percentage: "50", color: "#2496ED" },
+    { name: "Git/GitHub", percentage: "85", color: "#f34f29" },
   ],
 
   resumeData: [
     {
       type: "education",
       icon: <BookOpen className="w-6 h-6" />,
-      year: "2021-present",
-      title: "Software Engineering",
-      desc: "Currently studying in 3rd year at Mehran University of Engineering and Technology. Along with my studies, I am also working as a freelancer.",
-    },
-    {
-      type: "education",
-      icon: <BookOpen className="w-6 h-6" />,
-      year: "2019-2020",
-      title: "Intermediate",
-      desc: "I have done my intermediate in 2021 from BFPS School System Umerkot. I was interested in computer science from the beginning.",
-    },
-    {
-      type: "education",
-      icon: <BookOpen className="w-6 h-6" />,
-      year: "2023",
-      title: "Basic Computer Courses",
-      desc: "Along with my studies, I have also done many computer courses like MS Office and basic computer courses. I have also done many online courses from Coursera and YouTube and also from other platforms.",
+      year: "2023 - Present", // Implied from "Expected Graduation"
+      title: "B.E in Software Engineering",
+      desc: "Mehran University of Engineering & Technology, Jamshoro. GPA: 3.4/4.0. Active member of GDSC & SES Society.",
     },
     {
       type: "experience",
-      icon: <GraduationCap className="w-6 h-6" />,
-      year: "2021",
-      title: "Web Developer",
-      desc: "I can create a responsive website using HTML, CSS, JavaScript and Responsive Frameworks like TailwindCSS, Bootstrap.",
+      icon: <Briefcase className="w-6 h-6" />, // Changed icon to Briefcase for better semantics
+      year: "Recent",
+      title: "Full-Stack Developer | IntelliShare.ai",
+      desc: "Developed an AI-assisted web platform for London Resort using Next.js. Implemented server-side rendering (SSR), optimized SEO, and built reusable TypeScript components. Integrated AI-powered search and recommendation features.",
+    },
+    {
+      type: "experience",
+      icon: <Briefcase className="w-6 h-6" />,
+      year: "Previous",
+      title: "Full-Stack Developer | Network Algo",
+      desc: "Designed a lead management system using React.js, Node.js, and MySQL. Created dynamic dashboards with real-time analytics, RBAC (Role-Based Access Control), and export functionality. Established structured database schemas.",
     },
     {
       type: "experience",
       icon: <GraduationCap className="w-6 h-6" />,
       year: "2022",
-      title: "React Developer",
-      desc: "I can build a single page application using React.js, TailwindCSS, Framer Motion library. I have done many projects in React.js.",
-    },
-    {
-      type: "experience",
-      icon: <GraduationCap className="w-6 h-6" />,
-      year: "2023",
-      title: "MERN Developer",
-      desc: "By continuously learning and practicing, I have become a MERN Stack Developer. I have done many projects in MERN Stack, using React.js, Node.js, Express.js, MongoDB, TailwindCSS, Framer Motion.",
+      title: "Certifications & Awards",
+      desc: "GitHub Expert MLSA Community, React.js Developer (DEVTOWN), Programming Competition Award (GDSC & SES Society).",
     },
   ],
 
   services: [
     {
-      title: "Frontend Development",
+      title: "Full-Stack Web Development",
       description:
-        "I have experience in Frontend Development. I have done many projects in Frontend Development and implement responsive design principles to ensure optimal viewing and interaction across various devices and screen sizes. Design intuitive and visually appealing user interfaces, focusing on creating positive user experiences.",
+        "Building scalable applications using the MERN stack (MongoDB, Express, React, Node). I utilize Next.js for SSR and SEO optimization, ensuring fast page loads and seamless user experiences.",
       image: "/assets/fsd.avif",
     },
     {
-      title: "Backend Development",
+      title: "Backend & API Development",
       description:
-        "Develop server-side applications using Node.js and the Express.js framework. Design and implement RESTful APIs to facilitate communication between frontend and backend components. Utilize server-side scripting to execute code on the server, handling tasks such as data processing, authentication, and business logic.",
+        "Developing robust RESTful APIs and dependable backend systems. Experience with Sequelize and Prisma ORMs for managing MySQL and PostgreSQL databases, along with JWT authentication.",
       image: "/assets/wd.avif",
     },
     {
-      title: "Database Design and Management",
+      title: "Database Architecture",
       description:
-        "Utilize MongoDB for efficient and flexible data storage. Design and implement database schemas to meet application requirements. Optimize database queries for improved application performance.",
+        "Designing structured schemas for SQL (MySQL, PostgreSQL) and NoSQL (MongoDB) databases. Implementation of complex relationships, aggregation pipelines, and optimization strategies.",
       image: "/assets/wd.avif",
     },
   ],
@@ -118,52 +100,45 @@ I am enthusiastic about leveraging my acquired skills and knowledge to contribut
   projects: [
     {
       id: 1,
-      title: "Docs App (Dynamic)",
-      category: "Reactjs",
-      image: "/assets/Docs-App-react.png",
-      desc: "This is a dynamic website. In this website, you can add your data and delete your data. This website is made with React.js, TailwindCSS.",
+      title: "London Resort AI Platform",
+      category: "Next.js",
+      image: "/assets/Docs-App-react.png", // Placeholder: Recommend updating image path
+      desc: "An AI-assisted platform featuring interactive resort exploration and booking flows. Built with Next.js, TypeScript, and Server Actions for seamless inquiry processing.",
     },
     {
       id: 2,
-      title: "Blog Website",
-      category: "Nodejs",
-      image: "/assets/Blog-website-login_singup.png",
-      desc: "This is a blog website. In this website, you can add your blog and delete your blog. This website is made with Node.js, Express.js, MongoDB, TailwindCSS. User authentication is added using JWT token and bcryptjs",
+      title: "Lead Management Dashboard",
+      category: "React/Node",
+      image: "/assets/react-website.png", // Placeholder
+      desc: "A comprehensive system with real-time analytics for lead performance. Features advanced filtering, RBAC, and data visualization using React, Node.js, and MySQL.",
     },
     {
       id: 3,
-      title: "Pinterest Clone",
-      category: "Creative",
-      image: "/assets/Pinterest_SingUp page.png",
-      desc: "This is a Pinterest website clone. This website is made with HTML, CSS, JavaScript, and MongoDB as a database. In this website, you can create posts and delete posts. User authentication is added using Express.js, Passport.js, and bcryptjs.",
+      title: "Job Portal Application",
+      category: "MERN Stack",
+      image: "/assets/Blog-website-login_singup.png", // Placeholder
+      desc: "Full-stack portal with conditional authentication for students and admins. Implemented global error handling, Redux for state management, and complex MongoDB CRUD operations.",
     },
     {
       id: 4,
-      title: "Product Designer Portfolio",
-      category: "Design",
-      image: "/assets/produc_designer.png",
-      desc: "This is a Product Designer website. This website is made with HTML, CSS, GSAP animation and Locomotive Scroll library",
+      title: "Full-Stack Blog Platform",
+      category: "MERN Stack",
+      image: "/assets/Blog-website-login_singup.png", // Placeholder
+      desc: "Complete blogging platform with RESTful APIs. Features include efficient MongoDB data management, CORS handling, and a responsive React frontend.",
     },
     {
       id: 5,
-      title: "React Website",
-      category: "Reactjs",
-      image: "/assets/react-website.png",
-      desc: "This is a React Website. This website is made with React.js, TailwindCSS, and Framer Motion library",
-    },
-    {
-      id: 6,
-      title: "Contact App",
-      category: "Nodejs",
-      image: "/assets/Contact_app.png",
-      desc: "This is a Contact App. In this website, you can add your contact and delete your contact. This website is made with Node.js, Express.js, MongoDB, TailwindCSS.",
+      title: "Task Management App",
+      category: "React/Express",
+      image: "/assets/Contact_app.png", // Placeholder
+      desc: "Integrated frontend with backend ensuring seamless client-server communication. Focus on API development and smooth database operations.",
     },
   ],
 
   stats: [
-    { label: "Years Experience", value: "3+" },
+    { label: "Years Experience", value: "1+" },
     { label: "Projects Completed", value: "10+" },
-    { label: "Technologies", value: "12+" },
-    { label: "Certifications", value: "5+" },
+    { label: "Technologies", value: "15+" },
+    { label: "Certifications", value: "4" },
   ],
 }
