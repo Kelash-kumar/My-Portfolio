@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { useUser } from "@/lib/user-context"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -12,6 +13,8 @@ import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react"
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const user = useUser()
+  const { email, phone, address } = user
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -37,7 +40,7 @@ export default function Contact() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12,
       },
@@ -48,20 +51,17 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "kelash.raisal@gmail.com",
-      color: "text-blue-500",
+      value: email,
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+92 3491100042",
-      color: "text-green-500",
+      value: phone,
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Jamshoro, Sindh, Pakistan",
-      color: "text-red-500",
+      value: address,
     },
   ]
 
@@ -75,10 +75,10 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h1 className="text-4xl lg:text-6xl font-bold mb-4">
-            Get In <span className="gradient-text">Touch</span>
+          <h1 className="text-4xl lg:text-6xl font-bold mb-4 text-slate-800 dark:text-slate-200">
+            Get In <span className="text-slate-600 dark:text-slate-400">Touch</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Let's discuss your ideas and bring them to life together
           </p>
         </motion.div>
@@ -87,8 +87,8 @@ export default function Contact() {
           {/* Contact Info */}
           <motion.div className="space-y-8" variants={itemVariants}>
             <div>
-              <h2 className="text-2xl font-bold mb-6 gradient-text">Let's Discuss Your Ideas!</h2>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+              <h2 className="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">Let's Discuss Your Ideas!</h2>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
                 Feel free to reach out for any inquiries, collaborations, or just to say hello. I'm always excited to
                 work on new projects and meet fellow developers.
               </p>
@@ -98,18 +98,18 @@ export default function Contact() {
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center space-x-4 p-4 rounded-xl glass-card border-white/20 hover:shadow-lg transition-all duration-300"
-                  whileHover={{ x: 5 }}
-                  variants={itemVariants}
+                  className="flex items-center space-x-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
+                  whileHover={{ x: 4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 >
                   <div
-                    className={`w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center ${info.color}`}
+                    className="w-12 h-12 rounded-full bg-slate-700 dark:bg-slate-600 flex items-center justify-center"
                   >
                     <info.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-800 dark:text-gray-200">{info.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300">{info.value}</p>
+                    <h3 className="font-semibold text-slate-800 dark:text-slate-200">{info.title}</h3>
+                    <p className="text-slate-600 dark:text-slate-400">{info.value}</p>
                   </div>
                 </motion.div>
               ))}
@@ -118,18 +118,22 @@ export default function Contact() {
 
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
-            <Card className="glass-card border-white/20">
+            <Card className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <Input placeholder="Your Full Name" className="glass-card border-white/20 bg-white/5" required />
+                      <Input 
+                        placeholder="Your Full Name" 
+                        className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:border-slate-400 dark:focus:border-slate-500" 
+                        required 
+                      />
                     </div>
                     <div>
                       <Input
                         type="email"
                         placeholder="Your Email Address"
-                        className="glass-card border-white/20 bg-white/5"
+                        className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:border-slate-400 dark:focus:border-slate-500"
                         required
                       />
                     </div>
@@ -137,20 +141,20 @@ export default function Contact() {
 
                   <Input
                     placeholder="Subject of Your Message"
-                    className="glass-card border-white/20 bg-white/5"
+                    className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:border-slate-400 dark:focus:border-slate-500"
                     required
                   />
 
                   <Textarea
                     placeholder="Tell me more about your project or idea..."
                     rows={6}
-                    className="glass-card border-white/20 bg-white/5 resize-none"
+                    className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:border-slate-400 dark:focus:border-slate-500 resize-none"
                     required
                   />
 
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                    className="w-full bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-500 text-white transition-colors duration-300 group"
                     size="lg"
                     disabled={isSubmitted}
                   >

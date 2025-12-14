@@ -5,7 +5,7 @@ export const userData = {
   email: "kelash.raisal@gmail.com",
   phone: "+92 3491100042",
   address: "Jamshoro, Sindh, Pakistan",
-  profession: "MERN Stack Developer",
+  profession: " Junior Full-Stack Developer | MERN Stack",
   profile_image: "/assets/profile-pic.png",
   about: `My name is Kelash Kumar, and I am a dedicated software engineering student hailing from Umerkot, Sindh. I am currently pursuing my education at Mehran University of Engineering and Technology. With a fervent passion for technology, I have diligently acquired a comprehensive skill set in web development and am eager to apply my knowledge to real-world projects.
 
@@ -158,5 +158,12 @@ I am enthusiastic about leveraging my acquired skills and knowledge to contribut
       image: "/assets/Contact_app.png",
       desc: "This is a Contact App. In this website, you can add your contact and delete your contact. This website is made with Node.js, Express.js, MongoDB, TailwindCSS.",
     },
+  ],
+
+  stats: [
+    { label: "Years Experience", value: "3+" },
+    { label: "Projects Completed", value: "10+" },
+    { label: "Technologies", value: "12+" },
+    { label: "Certifications", value: "5+" },
   ],
 }

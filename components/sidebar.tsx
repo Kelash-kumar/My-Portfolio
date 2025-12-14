@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Home, User, Briefcase, FolderOpen, GraduationCap, Mail, Menu, X, Sun, Moon } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
+import { useUser } from "@/lib/user-context"
 
 const navigation = [
   { name: "Home", href: "/", icon: Home },
@@ -22,6 +23,8 @@ export default function Sidebar() {
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
+  const user = useUser()
+  const { name } = user
 
   useEffect(() => {
     setMounted(true)
@@ -75,7 +78,7 @@ export default function Sidebar() {
       <Button
         variant="ghost"
         size="icon"
-        className="fixed top-4 left-4 z-50 lg:hidden glass-card"
+        className="fixed top-4 left-4 z-50 lg:hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -83,7 +86,7 @@ export default function Sidebar() {
 
       {/* Desktop Sidebar */}
       <motion.aside
-        className="fixed left-0 top-0 z-40 h-screen w-20 lg:w-24 glass-card border-r border-white/20 dark:border-white/10 hidden lg:flex flex-col items-center py-8"
+        className="fixed left-0 top-0 z-40 h-screen w-20 lg:w-24 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-700 hidden lg:flex flex-col items-center py-8"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -91,8 +94,8 @@ export default function Sidebar() {
         {/* Logo */}
         <motion.div className="mb-8" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <Link href="/" className="block">
-            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">
-              K
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-slate-700 dark:bg-slate-600 flex items-center justify-center text-white font-bold text-xl">
+              {name?.charAt(0) || "K"}
             </div>
           </Link>
         </motion.div>
@@ -112,8 +115,8 @@ export default function Sidebar() {
                   <motion.div
                     className={`relative p-3 rounded-xl transition-all duration-300 group ${
                       isActive
-                        ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
-                        : "hover:bg-white/20 dark:hover:bg-white/10 text-gray-600 dark:text-gray-300"
+                        ? "bg-slate-700 dark:bg-slate-600 text-white"
+                        : "hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400"
                     }`}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
@@ -122,12 +125,12 @@ export default function Sidebar() {
 
                     {/* Tooltip */}
                     <motion.div
-                      className="absolute left-full ml-4 px-3 py-2 bg-black/80 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none"
+                      className="absolute left-full ml-4 px-3 py-2 bg-slate-800 dark:bg-slate-700 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none"
                       initial={{ opacity: 0, x: -10 }}
                       whileHover={{ opacity: 1, x: 0 }}
                     >
                       {item.name}
-                      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 w-2 h-2 bg-black/80 rotate-45" />
+                      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 w-2 h-2 bg-slate-800 dark:bg-slate-700 rotate-45" />
                     </motion.div>
                   </motion.div>
                 </Link>
@@ -142,7 +145,7 @@ export default function Sidebar() {
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="rounded-xl hover:bg-white/20 dark:hover:bg-white/10"
+            className="rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
@@ -154,14 +157,14 @@ export default function Sidebar() {
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+              className="fixed inset-0 bg-slate-900/50 z-30 lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
             />
             <motion.aside
-              className="fixed left-0 top-0 z-40 h-screen w-64 glass-card border-r border-white/20 dark:border-white/10 lg:hidden"
+              className="fixed left-0 top-0 z-40 h-screen w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-700 lg:hidden"
               variants={sidebarVariants}
               initial="closed"
               animate="open"
@@ -170,10 +173,10 @@ export default function Sidebar() {
               <div className="flex flex-col h-full p-6">
                 {/* Logo */}
                 <motion.div className="mb-8 flex items-center space-x-3" variants={itemVariants}>
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold">
-                    K
+                  <div className="w-10 h-10 rounded-full bg-slate-700 dark:bg-slate-600 flex items-center justify-center text-white font-bold">
+                    {name?.charAt(0) || "K"}
                   </div>
-                  <span className="text-xl font-bold gradient-text">Kelash Kumar</span>
+                  <span className="text-xl font-bold text-slate-800 dark:text-slate-200">{name}</span>
                 </motion.div>
 
                 {/* Navigation */}
@@ -186,8 +189,8 @@ export default function Sidebar() {
                           <motion.div
                             className={`flex items-center space-x-3 p-3 rounded-xl transition-all duration-300 ${
                               isActive
-                                ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
-                                : "hover:bg-white/20 dark:hover:bg-white/10 text-gray-600 dark:text-gray-300"
+                                ? "bg-slate-700 dark:bg-slate-600 text-white"
+                                : "hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400"
                             }`}
                             whileHover={{ x: 5 }}
                             whileTap={{ scale: 0.95 }}
@@ -206,7 +209,7 @@ export default function Sidebar() {
                   <Button
                     variant="ghost"
                     onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                    className="w-full justify-start space-x-3 p-3 rounded-xl hover:bg-white/20 dark:hover:bg-white/10"
+                    className="w-full justify-start space-x-3 p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"
                   >
                     {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                     <span>Toggle Theme</span>

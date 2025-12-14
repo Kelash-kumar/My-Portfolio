@@ -23,9 +23,9 @@ import { MdOutlineClass } from 'react-icons/md';
 const userDetails = {
   name: 'Kelash Kumar',
   email: 'kelash.raisal@gmail.com',
-  phone: '92 3491100042',
+  phone: '+92 3491100042',
   address: 'Jasmhoro Sindh Pakistan',
-  profession: 'MERN Stack Developer',
+  profession: 'Junior Full-Stack Developer | MERN Stack',
   profile_image: profile_image,
   about:`My name is Kelash Kumar, and I am a dedicated software engineering student hailing from Umerkot, Sindh. I am currently pursuing my education at Mehran University of Engineering and Technology. With a fervent passion for technology, I have diligently acquired a comprehensive skill set in web development and am eager to apply my knowledge to real-world projects.
           I am a self-taught developer, I am currently working as a freelancer and looking for a full-time job as a MERN Stack Developer. I am a team player and I love working with people. I am a fast learner and I am always looking for ways to improve my skills.
