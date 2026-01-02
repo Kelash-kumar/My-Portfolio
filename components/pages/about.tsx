@@ -9,12 +9,12 @@ import Image from "next/image"
 
 export default function About() {
   const user = useUser()
-  const { name, email, phone, address, profession, profile_image, about } = user
+  const { name, email, phone, address, profession, profile_image,about_image, about } = user
 
   const stats = [
     { icon: Users, label: "Clients Satisfied", value: "03" },
     { icon: Briefcase, label: "Services Provided", value: "03" },
-    { icon: CheckCircle, label: "Projects Completed", value: "03+" },
+    { icon: CheckCircle, label: "Projects Completed", value: "10+" },
   ]
 
   const containerVariants = {
@@ -51,7 +51,7 @@ export default function About() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <motion.div className="text-center mb-20" variants={itemVariants}>
+        <motion.div className="text-center mb-10" variants={itemVariants}>
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-6"
             whileHover={{ scale: 1.05 }}
@@ -74,7 +74,7 @@ export default function About() {
               <div className="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700">
                 <div className="w-full aspect-[4/5] rounded-3xl overflow-hidden bg-slate-100 dark:bg-slate-800">
                   <Image
-                    src={profile_image || "/placeholder.svg?height=500&width=400"}
+                    src={about_image || "/placeholder.svg?height=500&width=400"}
                     alt={name}
                     width={400}
                     height={500}
@@ -129,7 +129,7 @@ export default function About() {
                     asChild
                     className="bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-500 text-white px-8 py-6 text-lg font-semibold rounded-xl"
                   >
-                    <a href="/assets/kelash kumar-CV.pdf" download="Kelash-Kumar-CV.pdf">
+                    <a href="/assets/Kelash_MERN_FullStack_Developer_2yrs.pdf" download="Kelash_MERN_FullStack_Developer_2yrs.pdf">
                       <Download className="mr-3 w-5 h-5" />
                       Download Resume
                     </a>

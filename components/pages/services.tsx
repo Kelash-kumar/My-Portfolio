@@ -125,74 +125,6 @@ export default function Services() {
       animate="visible"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <motion.div className="text-center mb-20" variants={itemVariants}>
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-6"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Code2 className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-            <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Professional Services</span>
-          </motion.div>
-        </motion.div>
-
-        {/* Services Grid */}
-        <motion.div className="mb-24" variants={itemVariants}>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allServices.map((service, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ 
-                  scale: 1.02,
-                  y: -4,
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className="group h-full"
-              >
-                <Card className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors duration-300 h-full">
-                  <CardContent className="p-8 h-full flex flex-col">
-
-                    {/* Service Image (if available) */}
-                    {service.image && (
-                      <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
-                        <Image
-                          src={service.image}
-                          alt={service.title}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                      </div>
-                    )}
-
-                    {/* Service Content */}
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-4 text-slate-800 dark:text-slate-200">
-                        {service.title}
-                      </h3>
-
-                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                        {service.description}
-                      </p>
-
-                      {/* Features */}
-                      {service.features && (
-                        <div className="space-y-3 mb-6">
-                          {service.features.map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-center gap-3">
-                              <CheckCircle className="w-4 h-4 text-slate-500 dark:text-slate-500 flex-shrink-0" />
-                              <span className="text-sm text-slate-600 dark:text-slate-400">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Skills Section */}
         <motion.div className="mb-20" variants={itemVariants}>
@@ -293,6 +225,75 @@ export default function Services() {
                     </div>
                   </>
                 )}
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+              {/* Header Section */}
+        <motion.div className="text-center mb-20" variants={itemVariants}>
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-6"
+            whileHover={{ scale: 1.05 }}
+          >
+            <Code2 className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+            <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Professional Services</span>
+          </motion.div>
+        </motion.div>
+
+        {/* Services Grid */}
+        <motion.div className="mb-24" variants={itemVariants}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {allServices.map((service, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.02,
+                  y: -4,
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                className="group h-full"
+              >
+                <Card className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors duration-300 h-full">
+                  <CardContent className="p-8 h-full flex flex-col">
+
+                    {/* Service Image (if available) */}
+                    {service.image && (
+                      <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
+
+                    {/* Service Content */}
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold mb-4 text-slate-800 dark:text-slate-200">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                        {service.description}
+                      </p>
+
+                      {/* Features */}
+                      {service.features && (
+                        <div className="space-y-3 mb-6">
+                          {service.features.map((feature, featureIndex) => (
+                            <div key={featureIndex} className="flex items-center gap-3">
+                              <CheckCircle className="w-4 h-4 text-slate-500 dark:text-slate-500 flex-shrink-0" />
+                              <span className="text-sm text-slate-600 dark:text-slate-400">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>

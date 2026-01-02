@@ -49,14 +49,14 @@ export default function Projects() {
 
   return (
     <motion.section
-      className="min-h-screen py-24 px-4 lg:px-8"
+      className="min-h-screen py-14 px-4 lg:px-8"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <motion.div className="text-center mb-20" variants={itemVariants}>
+        <motion.div className="text-center mb-10" variants={itemVariants}>
           <motion.div 
             className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700"
           >

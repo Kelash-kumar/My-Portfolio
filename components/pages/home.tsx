@@ -108,7 +108,7 @@ export default function Home() {
               size="lg"
               className="border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 group"
             >
-              <a href="/assets/kelash kumar-CV.pdf" download="Kelash-Kumar-CV.pdf">
+              <a href="/assets/Kelash_MERN_FullStack_Developer_2yrs.pdf" download="Kelash-MERN-FullStack-Developer-2yrs.pdf">
                 <Download className="mr-2 w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
                 Download CV
               </a>
