@@ -1,18 +1,22 @@
 .service {
-  padding: 50px 0;
-  margin-left: 65px;
+  padding: 50px 1rem;
+  margin-left: 0;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .services-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 0 1rem;
 }
 
 .service-item {
-  /* flex: 1; */
-  max-width: 370px; /* Adjust the max-width based on your design */
+  width: 100%;
+  max-width: 370px;
 }
 
 
@@ -24,7 +28,7 @@
 }
 
 .service-item {
-  margin-top: 20px;
+  margin-top: 0;
   padding: 20px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -71,14 +75,17 @@ p {
 }
 
 .skill_progress__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .skill_progress__item {
-  width: 200px;
-  margin: 20px;
+  width: 100%;
+  margin: 0;
   text-align: left;
 }
 
@@ -119,16 +126,62 @@ p {
 }
 
 
-/* responsive for mobile */
- @media screen and (max-width: 480px ) {
+/* Tablet Breakpoint */
+@media screen and (max-width: 768px) {
+  .service {
+    padding: 40px 0.75rem;
+  }
+
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill_progress__container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .section__title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile Breakpoint */
+@media screen and (max-width: 480px) {
   .service {
     margin-left: 0;
-    margin-top: 80px;
+    margin-top: 60px;
+    padding: 30px 0.5rem;
   }
+
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
   .service-item {
-    margin: 20px 0;
+    max-width: 100%;
+    padding: 15px;
   }
+
+  .skill_progress {
+    margin-top: 30px;
+  }
+
+  .skill_progress__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
   .skill_progress__item {
     width: 100%;
   }
- }
+
+  .section__title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+}

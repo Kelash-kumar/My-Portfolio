@@ -49,12 +49,12 @@ export default function Home() {
 
   return (
     <motion.section
-      className="min-h-screen flex items-center justify-center px-6 lg:px-12"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 pt-20 lg:pt-0"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
         {/* Content */}
         <motion.div className="space-y-8" variants={itemVariants}>
           <motion.div className="space-y-4" variants={itemVariants}>

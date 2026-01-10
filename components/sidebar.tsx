@@ -157,14 +157,14 @@ export default function Sidebar() {
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-slate-900/50 z-30 lg:hidden"
+              className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-30 lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
             />
             <motion.aside
-              className="fixed left-0 top-0 z-40 h-screen w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-700 lg:hidden"
+              className="fixed left-0 top-0 z-40 h-screen w-[280px] max-w-[85vw] bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-700 lg:hidden shadow-2xl"
               variants={sidebarVariants}
               initial="closed"
               animate="open"

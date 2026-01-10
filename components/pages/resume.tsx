@@ -48,84 +48,84 @@ export default function Resume() {
     data: any[]; 
     icon: any;
   }) => (
-    <motion.div className="space-y-8" variants={itemVariants}>
+    <motion.div className="space-y-6 md:space-y-8 w-full overflow-hidden" variants={itemVariants}>
       {/* Section Header */}
-      <div className="flex items-center gap-4 mb-10">
+      <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10">
         <motion.div 
-          className="w-14 h-14 rounded-2xl bg-slate-700 dark:bg-slate-600 flex items-center justify-center"
+          className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-slate-700 dark:bg-slate-600 flex items-center justify-center flex-shrink-0"
           whileHover={{ scale: 1.05, rotate: 5 }}
           transition={{ type: "spring", stiffness: 400, damping: 15 }}
         >
-          <SectionIcon className="w-7 h-7 text-white" />
+          <SectionIcon className="w-5 h-5 md:w-7 md:h-7 text-white" />
         </motion.div>
-        <div>
-          <h2 className="text-3xl font-black text-slate-800 dark:text-slate-200">
+        <div className="min-w-0">
+          <h2 className="text-xl md:text-3xl font-black text-slate-800 dark:text-slate-200 truncate">
             {title}
           </h2>
-          <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
+          <p className="text-xs md:text-sm text-slate-500 dark:text-slate-400 font-medium">
             {data.length} {data.length === 1 ? 'item' : 'items'}
           </p>
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative w-full">
         {/* Timeline line */}
-        <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-700 rounded-full" />
+        <div className="absolute left-5 md:left-7 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-700 rounded-full" />
 
-        <div className="space-y-10">
+        <div className="space-y-6 md:space-y-10">
           {data.map((item: any, index: number) => (
             <motion.div
               key={index}
-              className="relative flex items-start space-x-8"
+              className="relative flex items-start gap-3 md:gap-6"
               variants={itemVariants}
-              whileHover={{ x: 8, scale: 1.01 }}
+              whileHover={{ x: 4 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
             >
               {/* Timeline dot */}
               <motion.div
-                className="relative z-10 w-14 h-14 rounded-2xl bg-slate-700 dark:bg-slate-600 flex items-center justify-center border-4 border-white dark:border-slate-900"
+                className="relative z-10 w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-slate-700 dark:bg-slate-600 flex items-center justify-center border-2 md:border-4 border-white dark:border-slate-900 flex-shrink-0"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 15 }}
               >
-                <div className="text-white text-xl font-bold">
+                <div className="text-white text-sm md:text-xl font-bold">
                   {item.icon || (index + 1)}
                 </div>
               </motion.div>
 
               {/* Content Card */}
-              <Card className="flex-1 group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors duration-300 rounded-2xl">
-                <CardContent className="p-8">
+              <Card className="flex-1 min-w-0 group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors duration-300 rounded-xl md:rounded-2xl overflow-hidden">
+                <CardContent className="p-4 md:p-6 lg:p-8">
                   {/* Card Header */}
-                  <div className="flex items-start justify-between mb-5">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2 group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors duration-300">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base md:text-xl font-bold text-slate-800 dark:text-slate-200 mb-1 md:mb-2 group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors duration-300 break-words">
                         {item.title}
                       </h3>
                       {item.company && (
-                        <p className="text-slate-600 dark:text-slate-400 font-semibold text-sm flex items-center gap-2">
-                          <Briefcase className="w-4 h-4" />
-                          {item.company}
+                        <p className="text-slate-600 dark:text-slate-400 font-semibold text-xs md:text-sm flex items-center gap-1 md:gap-2">
+                          <Briefcase className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                          <span className="break-words">{item.company}</span>
                         </p>
                       )}
                       {item.location && (
-                        <p className="text-slate-500 dark:text-slate-500 text-sm flex items-center gap-2 mt-1">
-                          <MapPin className="w-4 h-4" />
-                          {item.location}
+                        <p className="text-slate-500 dark:text-slate-500 text-xs md:text-sm flex items-center gap-1 md:gap-2 mt-1">
+                          <MapPin className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                          <span className="break-words">{item.location}</span>
                         </p>
                       )}
                     </div>
                     
-                    <div className="flex flex-col items-end gap-2">
+                    <div className="flex flex-wrap sm:flex-col items-start sm:items-end gap-2">
                       <Badge 
                         variant="secondary" 
-                        className="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2"
+                        className="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 rounded-full px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-semibold flex items-center gap-1 md:gap-2 whitespace-nowrap"
                       >
                         <Calendar className="w-3 h-3" />
                         {item.year}
                       </Badge>
                       
                       {item.status && (
-                        <Badge className="bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-full px-3 py-1">
+                        <Badge className="bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-full px-2 md:px-3 py-1">
                           {item.status}
                         </Badge>
                       )}
@@ -134,17 +134,17 @@ export default function Resume() {
 
                   {/* Description */}
                   <div className="relative">
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm mb-4">
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-xs md:text-sm mb-3 md:mb-4 break-words">
                       {item.desc}
                     </p>
                     
                     {/* Skills/Technologies */}
                     {item.technologies && (
-                      <div className="flex flex-wrap gap-2 mt-4">
+                      <div className="flex flex-wrap gap-1.5 md:gap-2 mt-3 md:mt-4">
                         {item.technologies.map((tech: string, techIndex: number) => (
                           <span
                             key={techIndex}
-                            className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium"
+                            className="px-2 md:px-3 py-0.5 md:py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium"
                           >
                             {tech}
                           </span>
@@ -163,24 +163,24 @@ export default function Resume() {
 
   return (
     <motion.section
-      className="min-h-screen py-14 px-4 lg:px-8"
+      className="min-h-screen py-8 md:py-14 px-2 sm:px-4 lg:px-8 overflow-x-hidden"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto w-full overflow-hidden">
         {/* Header */}
-        <motion.div className="text-center mb-10" variants={itemVariants}>
+        <motion.div className="text-center mb-6 md:mb-10" variants={itemVariants}>
           <motion.div 
-            className="inline-flex items-center gap-3 mb-8 px-5 py-3 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700"
+            className="inline-flex items-center gap-2 md:gap-3 mb-6 md:mb-8 px-3 md:px-5 py-2 md:py-3 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700"
           >
-            <Award className="w-5 h-5 text-slate-600 dark:text-slate-400" />
-            <span className="text-sm font-semibold text-slate-600 dark:text-slate-400">Professional Journey</span>
+            <Award className="w-4 h-4 md:w-5 md:h-5 text-slate-600 dark:text-slate-400" />
+            <span className="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400">Professional Journey</span>
           </motion.div>
         </motion.div>
 
         {/* Timeline Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20">
           <TimelineSection 
             title="Professional Experience" 
             data={experienceData} 
@@ -195,22 +195,22 @@ export default function Resume() {
 
         {/* Stats Section - Now Dynamic */}
         <motion.div 
-          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8"
+          className="mt-12 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8"
           variants={itemVariants}
         >
           {stats?.map((stat: { label: string; value: string }, index: number) => (
             <motion.div
               key={index}
-              className="text-center p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700"
+              className="text-center p-3 md:p-6 bg-white dark:bg-slate-900 rounded-xl md:rounded-2xl border border-slate-200 dark:border-slate-700"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <motion.div 
-                className="text-4xl font-black text-slate-700 dark:text-slate-300 mb-2"
+                className="text-2xl md:text-4xl font-black text-slate-700 dark:text-slate-300 mb-1 md:mb-2"
               >
                 {stat.value}
               </motion.div>
-              <p className="text-slate-600 dark:text-slate-400 font-medium text-sm">
+              <p className="text-slate-600 dark:text-slate-400 font-medium text-xs md:text-sm">
                 {stat.label}
               </p>
             </motion.div>

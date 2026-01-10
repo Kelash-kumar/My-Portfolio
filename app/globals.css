@@ -101,3 +101,56 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(100, 116, 139, 0.6);
 }
+
+/* Responsive utilities */
+@layer utilities {
+  .responsive-container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .responsive-section {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+  }
+
+  .responsive-text-lg {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+  }
+
+  .responsive-text-xl {
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  }
+
+  .responsive-text-2xl {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+
+  .responsive-text-3xl {
+    font-size: clamp(1.5rem, 4vw, 1.875rem);
+  }
+
+  .responsive-text-4xl {
+    font-size: clamp(1.875rem, 5vw, 2.25rem);
+  }
+}
+
+/* Hide horizontal overflow on mobile to prevent scroll issues */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+/* Ensure touch targets are at least 44px on mobile */
+@media (max-width: 768px) {
+  button, 
+  a, 
+  input[type="submit"],
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

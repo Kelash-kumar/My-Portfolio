@@ -27,7 +27,7 @@ export default function RootLayout({
           <UserProvider user={userData}>
             <div className="flex min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
               <Sidebar />
-              <main className="flex-1 ml-20 lg:ml-24 transition-all duration-300">
+              <main className="flex-1 ml-0 lg:ml-24 transition-all duration-300">
                 <div className="min-h-screen">{children}</div>
               </main>
             </div>

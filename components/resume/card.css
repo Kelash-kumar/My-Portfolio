@@ -1,21 +1,75 @@
 /* card.css */
 .card {
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.glassmorphism {
+  background-color: #f7f4f42f;
+  backdrop-filter: blur(50px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card__content {
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.card__header h4 {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666;
+  word-wrap: break-word;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 12px;
+    margin: 8px 0;
   }
   
-  .card:hover {
-    background: rgba(255, 255, 255, 0.2);
+  .card__header h4 {
+    font-size: 0.85rem;
   }
   
-  .glassmorphism {
-    background-color: #f7f4f42f;
-    backdrop-filter: blur(50px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  .card h3 {
+    font-size: 1rem;
   }
- .card:hover{
-  transform: scaleY(1.1);
- }
+  
+  .card p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,87 +1,183 @@
 .edu_pge {
-    margin-left: 30px;
+    margin-left: 0;
     min-height: 100vh;
-    max-height: auto;
-  
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    overflow-x: hidden;
 }
 
 .edu_container {
     width: 100%;
-    height: 100vh;
-    height: 100%;
+    max-width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 1em;
+    align-items: flex-start;
+    gap: 2rem;
     flex-wrap: wrap;
-    padding: 6rem;
+    padding: 4rem 1rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .experience,
 .education {
-    width: 40vw;
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
-    padding: 2em 2em;
-    /* background-color: rgba(240, 248, 255, 0.404); */
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.experience h1,
+.education h1 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
 }
 
 .exp_icon {
-    font-size: 2.1em;
+    font-size: 1.8em;
     color: rgb(238, 176, 5);
+    flex-shrink: 0;
 }
 
 .experience span {
     display: flex;
-    font-size: 1em;
+    font-size: 0.95em;
     color: rgb(109, 107, 107);
-    padding-left: 1em;
+    padding-left: 0.75em;
     font-weight: 500;
 }
 
 .exp_div {
     border-left: 2px solid rgb(209, 155, 7);
-    padding-left: 1em;
-    margin-left: 2em;
+    padding-left: 0.75em;
+    margin-left: 1em;
     margin-top: 0.5em;
+    overflow: hidden;
 }
 
 .experience div h6 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 500;
+    word-wrap: break-word;
 }
 
 .experience div p {
     color: rgb(114, 115, 116);
-    font-size: 1em;
-    padding-bottom: 2em;
+    font-size: 0.95em;
+    padding-bottom: 1.5em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-/* Media Queries */
-@media screen and (max-width: 768px) {
+.experience_content {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Tablet Breakpoint */
+@media screen and (max-width: 1024px) {
+    .edu_pge {
+        padding: 0 0.75rem;
+    }
+
+    .edu_container {
+        padding: 3rem 0.75rem;
+        gap: 1.5rem;
+    }
+
     .experience,
     .education {
-        width: 70vw;
-        margin: 3rem 0rem;
+        min-width: 250px;
+        max-width: 450px;
+        padding: 1.25rem;
     }
-   
 }
 
-@media screen and (max-width: 480px) {
-   
+/* Mobile Large Breakpoint */
+@media screen and (max-width: 768px) {
     .edu_pge {
-        margin-left: 0;
+        padding: 0 0.5rem;
     }
+
     .edu_container {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 6rem 0rem;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 2rem 0.5rem;
     }
+
     .experience,
     .education {
         width: 100%;
-        margin: 1rem 0.9rem;
+        max-width: 100%;
+        min-width: auto;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .exp_div {
+        margin-left: 0.5em;
+        padding-left: 0.5em;
+    }
+
+    .experience h1,
+    .education h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Mobile Small Breakpoint */
+@media screen and (max-width: 480px) {
+    .edu_pge {
+        padding: 0 0.25rem;
+    }
+
+    .edu_container {
+        padding: 1.5rem 0.25rem;
+        gap: 0.75rem;
+    }
+
+    .experience,
+    .education {
+        padding: 0.75rem;
+        border-radius: 12px;
+    }
+
+    .experience h1,
+    .education h1 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .exp_icon {
+        font-size: 1.5em;
+    }
+
+    .exp_div {
+        margin-left: 0.25em;
+        padding-left: 0.5em;
+    }
+
+    .experience div h6 {
+        font-size: 1em;
+    }
+
+    .experience div p {
+        font-size: 0.9em;
+        padding-bottom: 1em;
     }
 }
