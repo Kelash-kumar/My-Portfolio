@@ -12,8 +12,8 @@ export default function About() {
   const { name, email, phone, address, profession, profile_image,about_image, about } = user
 
   const stats = [
-    { icon: Users, label: "Clients Satisfied", value: "03" },
-    { icon: Briefcase, label: "Services Provided", value: "03" },
+    { icon: Users, label: "Clients Satisfied", value: "10+" },
+    { icon: Briefcase, label: "Services Provided", value: "5+" },
     { icon: CheckCircle, label: "Projects Completed", value: "10+" },
   ]
 
